@@ -1,0 +1,351 @@
+@font-face {
+  font-family: 'Fredoka';
+  src: url('../assets/fonts/Fredoka-VariableFont.ttf') format('truetype-variations');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.auth-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.auth-container {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(150deg, #6a2cd6 -10%, #080808 85%);
+  font-family: 'Fredoka', -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 20px;
+}
+
+.auth-container::-webkit-scrollbar {
+  display: none;
+}
+
+.login-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  font-family: 'Fredoka', -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.login-page {
+  display: grid;
+  grid-template-rows: minmax(170px, 1fr) auto minmax(0, 1fr);
+  justify-items: center;
+}
+
+.login-page .login-card {
+  grid-row: 2;
+}
+
+.register-page {
+  grid-template-rows: minmax(clamp(130px, 22vh, 170px), 1fr) auto minmax(0, 1fr);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 1100px;
+  height: auto;
+  max-height: 600px;
+  padding: 0;
+  background: #1a1a1a;
+  border-radius: 12px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  animation: slideUp 0.4s ease-out;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+}
+
+.login-card > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  justify-content: center;
+}
+
+.centralize-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.login-logo {
+  grid-row: 1;
+  align-self: end;
+  display: block;
+  width: min(45vw, clamp(140px, 30vh, 220px));
+  max-height: clamp(95px, 20vh, 150px);
+  height: auto;
+  margin: 0 auto clamp(16px, 4vh, 50px);
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.login-animation-stage {
+  position: relative;
+  grid-row: 1;
+  align-self: end;
+  width: min(45vw, clamp(140px, 30vh, 220px));
+  height: clamp(95px, 20vh, 150px);
+  margin: 0 auto clamp(16px, 4vh, 50px);
+}
+
+.login-sprite {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translateX(-20px);
+}
+
+.login-letters-sprite,
+.login-loading-dots {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  width: 100%;
+  height: auto;
+  transform: translateX(-50%);
+  object-fit: contain;
+}
+.login-loading-dots {
+  width: 70% !important;
+  margin-top: 4px !important;
+
+}
+
+.login-card > div:first-child {
+  border-right: 1px solid #333;
+  padding-right: 60px;
+}
+
+.login-card > div:last-child {
+  padding-left: 60px;
+}
+
+.register-card > div {
+  padding-top: clamp(24px, 5vh, 40px);
+  padding-bottom: clamp(24px, 5vh, 40px);
+}
+
+.register-card > div:first-child {
+  padding-right: clamp(36px, 6vw, 60px);
+}
+
+.register-card > div:last-child {
+  padding-left: clamp(36px, 6vw, 60px);
+}
+
+.register-page .login-header {
+  margin-bottom: clamp(16px, 4vh, 30px);
+}
+
+.register-page .login-form {
+  gap: clamp(10px, 2vh, 16px);
+}
+
+@media (max-width: 760px) {
+  .register-page {
+    height: auto;
+    min-height: 100%;
+    grid-template-rows: auto auto 20px;
+    align-content: start;
+  }
+
+  .register-page .login-logo {
+    margin-top: clamp(8px, 3vh, 24px);
+  }
+
+  .register-card {
+    max-height: none;
+    flex-direction: column;
+  }
+
+  .register-card > div,
+  .register-card > div:first-child,
+  .register-card > div:last-child {
+    padding: clamp(20px, 6vw, 32px);
+  }
+
+  .register-card > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid #333;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-header h1 {
+  font-size: 28px;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 8px 0;
+}
+
+.login-header p {
+  font-size: 14px;
+  color: #b0b0b0;
+  margin: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #e0e0e0;
+}
+
+.form-group input {
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  background: #2a2a2a;
+  color: #ffffff;
+}
+
+.form-group input::placeholder {
+  color: #777;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #6a2cd6;
+  background: #333;
+  box-shadow: 0 0 0 3px rgba(11, 26, 44, 0.2);
+}
+
+.form-group input:disabled {
+  background: #222;
+  color: #666;
+  cursor: not-allowed;
+}
+
+.error-message {
+  padding: 10px 12px;
+  background: #3d1f1f;
+  border: 1px solid #6b2c2c;
+  border-radius: 6px;
+  color: #ff6b6b;
+  font-size: 13px;
+  animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.btn-primary {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  background: #6a2cd6 !important;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border: 1px solid #0e0d0d;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  background: #313131 !important;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.login-footer {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+
+.login-footer p {
+  margin: 0;
+  font-size: 13px;
+  color: #b0b0b0;
+}
+
+.link-button {
+  background: none;
+  border: none;
+  color: #6a2cd6;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  padding: 0;
+  font-size: 13px;
+  text-decoration: none;
+}
+
+.link-button:hover:not(:disabled) {
+  color: #6bb3ff;
+  text-decoration: underline;
+}
+
+.link-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
