@@ -1,6 +1,6 @@
-# Discord Clone App
+# Project Lupin
 
-Aplicativo desktop estilo Discord, construído com Electron e Node.js.
+Aplicativo desktop de voz e vídeo, construído com Electron e Node.js.
 
 ## Estrutura do projeto
 
@@ -37,12 +37,14 @@ vite.config.js      # Configuração do Vite para o renderer
 
 - `npm install` — instala dependências
 - `npm run dev` — roda Vite + Electron juntos, com hot reload do React e DevTools abertas
+
+## Comando abaixo para gerar o aplicativo desktop (não necessário na versão de desenvolvimento)
 - `npm run build` — builda o React e gera os instaladores com electron-builder
 
 ## Próximos passos sugeridos
 
-1. Adicionar biblioteca de estado (Context API, Zustand ou Redux) conforme o app crescer.
-2. Adicionar camada de backend/API (auth, mensagens, WebSocket para tempo real).
-3. Criar handlers IPC para autenticação e chat.
-4. Adicionar ícones em `build/` para o electron-builder.
+1. Continuação do Front-End
+2. Adicionar biblioteca de estado (Context API, Zustand ou Redux) conforme o app crescer.
+3. Adicionar camada de backend/API (auth, mensagens, WebSocket para tempo real).
+4. Criar handlers IPC para autenticação e chat.
 5. Antes de gerar build de produção, apertar a CSP em `src/renderer/index.html` (remover `unsafe-eval` e o `connect-src` do Vite dev server).
